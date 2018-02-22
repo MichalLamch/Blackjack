@@ -28,4 +28,8 @@ public class Card {
     {
         return colour;
     }
+    public int getValue()
+    {
+        return value;
+    }
 }
