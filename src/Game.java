@@ -3,14 +3,22 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Game {
-    private Table table = new Table();
-    private Player player = new Player();
-    private Croupier croupier = new Croupier();
-    private Random random = new Random();
-    private Scanner scan = new Scanner(System.in);
-    private boolean playersRound = true;
-    private boolean croupiersRound = true;
-    Game() {}
+    private Table table;
+    private Player player;
+    private Croupier croupier;
+    private Random random;
+    private Scanner scan;
+    private boolean playersRound;
+    private boolean croupiersRound;
+    Game() {
+        random = new Random();
+        croupier = new Croupier();
+        player = new Player();
+        table = new Table();
+        scan = new Scanner(System.in);
+        playersRound = true;
+        croupiersRound = true;
+    }
     public void startGame()
     {
         gameBeginning(player, croupier);
@@ -59,8 +67,6 @@ public class Game {
         int temp = random.nextInt(table.getDeck().size());
         p.addCardToList(table.getDeck().get(temp));
         table.getDeck().remove(temp);
-
-
     }
     private void gameBeginning(Player p, Croupier c)
     {
